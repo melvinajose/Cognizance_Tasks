@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style> 
+        input[type=submit]{
+          background-color: brown;
+          border: 3px solid grey;
+          font-size: 18px;
+          color: white;
+          padding: 8px 20px;
+          cursor: pointer;
+        }
+        h1,h3{
+            text-align:center; 
+            color:brown ;
+        }
+        b{
+            font-size: 25px;
+            font-family: monospace, Courier, 'Courier New' ;
+        }
+        table {
+            border-spacing: 30px;
+        }   
+        input[type=text] {
+            padding:10px;
+            border: 3px;
+            box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.404);
+            color: black;
+        }  
+        </style>
+</head>
+<body bgcolor="F5CCCC">
+
+    <br><br><h1><u>CALCULATOR</u></h1><br>
+
+    <h3>*Enter : "add" for Addition ; "sub" for Subtraction ; "mul" for Multiplication ; "div" for Division</h3>
+<form style="text-align: center" ; action="calculate" method="POST">
+    {% csrf_token %}
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td> <b>First Number : </b></td>
+            <td> <input type="text" name="num1" required></td>
+        </tr>
+        <tr>
+            <td> <b>Second Number : </b></td>
+            <td> <input type="text" name="num2" required></td>
+        </tr>
+        <tr>
+            <td> <b>Operator : </b></td>
+            <td> <input type="text" name="op" required></td>
+        </tr><br>
+        <tr>
+            <td> </td>
+            <td> <input type="submit" value="Calculate" placeholder="*"> </td>
+        </tr>
+    </table>
+</form>
+ 
+<h1>Result : {{result}}</h1>
+
+</body>
+</html>
